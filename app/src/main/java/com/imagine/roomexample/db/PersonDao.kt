@@ -21,6 +21,6 @@ interface PersonDao {
     fun deletePerson(person: Person): Completable
 
     @Query("SELECT * FROM person WHERE name = :name")
-    fun getPerson(name: String): Flowable<Person>
+    fun getPerson(name: String): Single<List<Person>>
 
 }
